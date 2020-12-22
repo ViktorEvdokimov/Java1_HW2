@@ -22,6 +22,16 @@ public class Main {
         if (c[i]<6) c[i]=c[i]*2;
     }
     printArray(c);
+    System.out.println("----Task 4----");
+    int d[][] = new int[7][7];
+    for(int i=0; i<d.length; i++){
+        for (int j=0; j<d[0].length; j++){
+            if (i==j || i+j==(d.length-1)) d[i][j]=1;
+            else d[i][j]=0;
+            System.out.print(d[i][j]+ ", ");
+        }
+        System.out.println("");
+    }
     }
 
 
