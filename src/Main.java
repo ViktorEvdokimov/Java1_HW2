@@ -32,13 +32,30 @@ public class Main {
         }
         System.out.println("");
     }
+    System.out.println("----Task 5----");
+    int e[] = new int[20];
+    fillingArray(e);
+    int max = -2147483648;
+    int min = 2147483647;
+    for (int i=0; i<e.length; i++){
+        if (e[i]>max) max=e[i];
+        if (e[i]<min) min=e[i];
+    }
+    printArray(e);
+    System.out.println("Max =" + max + ", Min = " + min);
     }
 
 
-    static void printArray (int b[]){
-        for (int i=0; i<b.length; i++){
-            System.out.print(b[i] + ", ");
+    static void printArray (int a[]){
+        for (int i=0; i<a.length; i++){
+            System.out.print(a[i] + ", ");
         }
         System.out.println("");
+    }
+    static int[] fillingArray (int a[]){
+        for (int i=0; i<a.length; i++){
+            a[i]= (int) (Math.random()*100);
+        }
+        return a;
     }
 }
