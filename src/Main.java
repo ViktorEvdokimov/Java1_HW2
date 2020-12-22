@@ -16,6 +16,12 @@ public class Main {
     }
     printArray(b);
     System.out.println("----Task 3----");
+    int c[] = new int[] { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+    printArray(c);
+    for(int i=0; i<c.length; i++){
+        if (c[i]<6) c[i]=c[i]*2;
+    }
+    printArray(c);
     }
 
 
