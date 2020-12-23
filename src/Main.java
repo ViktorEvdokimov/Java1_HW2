@@ -49,6 +49,12 @@ public class Main {
     printArray(f);
     boolean check = checkSum(f);
     System.out.println(check);
+    System.out.println("----Task 7----");
+    int g[] = new int[7];
+    fillingArray(g, 9);
+    printArray(g);
+    g = trancpArray(g, 9);
+    printArray(g);
     }
 
 
@@ -77,5 +83,17 @@ public class Main {
             if (sum1==sum2) return true;
         }
         return false;
+    }
+    static int[] trancpArray (int a[], int n) {
+        int []b = new int[a.length];
+        for(int i=0; i<a.length; i++){
+            int j=i+n;
+            while (j<0 || j>=a.length) {
+                if (j >= a.length) j = j - a.length;
+                if (j < 0) j = j + a.length;
+            }
+            b[i] = a[j];
+        }
+        return b;
     }
 }
