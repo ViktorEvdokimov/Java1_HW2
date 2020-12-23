@@ -34,7 +34,7 @@ public class Main {
     }
     System.out.println("----Task 5----");
     int e[] = new int[20];
-    fillingArray(e);
+        fillingArray(e, 100);
     int max = -2147483648;
     int min = 2147483647;
     for (int i=0; i<e.length; i++){
@@ -43,6 +43,12 @@ public class Main {
     }
     printArray(e);
     System.out.println("Max =" + max + ", Min = " + min);
+    System.out.println("----Task 6----");
+    int f[] = new int[100];
+    fillingArray(f, 9);
+    printArray(f);
+    boolean check = checkSum(f);
+    System.out.println(check);
     }
 
 
@@ -52,10 +58,24 @@ public class Main {
         }
         System.out.println("");
     }
-    static int[] fillingArray (int a[]){
+    static int[] fillingArray (int a[], int maxNum){
         for (int i=0; i<a.length; i++){
-            a[i]= (int) (Math.random()*100);
+            a[i]= (int) (Math.random()*maxNum);
         }
         return a;
+    }
+    static boolean checkSum (int a[]){
+        for(int i=0; i<a.length; i++){
+            int sum1=0;
+            int sum2=0;
+            for(int j=0; j<=i; j++){
+                sum1 = sum1+a[j];
+            }
+            for (int j = i+1; j<a.length; j++){
+                sum2 = sum2+a[j];
+            }
+            if (sum1==sum2) return true;
+        }
+        return false;
     }
 }
